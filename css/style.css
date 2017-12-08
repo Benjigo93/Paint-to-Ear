@@ -1,0 +1,237 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: 'Barlow Condensed', sans-serif;
+    -webkit-user-select: none;
+}
+
+canvas{
+    pointer-events: none;
+}
+
+/* COUNTDOWN */
+
+#countdown>div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30vw;
+}
+
+.prevent{
+    position: absolute;
+    font-size: 2vw;
+    font-weight: 700;
+    bottom: 4vh;
+    text-align: center;
+    width: 100%;
+}
+
+.prevent>span{
+    display: block;
+
+}
+
+/* ANIMATION OF NUMBERS FOR THE COUNTDOWN */
+
+.number{
+    animation: countDown 1s ease-out;
+    opacity: 0;
+}
+
+.number2{
+    animation: countDown 1s ease-out 1s;
+    opacity: 0;
+}
+
+.number3{
+    animation: countDown 1s ease-out 2s;
+    opacity: 0;
+}
+
+.number4{
+    animation: countDown 1s ease-out 3s;
+    opacity: 0;
+}
+
+.number5{
+    animation: countDown 1s ease-out 4s;
+    opacity: 0;
+}
+
+/* BUTTONS */
+
+#soundButton .mute{
+    position: absolute;
+    top: 5vh;
+    right: 2vw;
+    width: 2.5em;
+    height: 2.5em;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background-color: #5bd0ff;
+    text-align: center;
+    padding: 0.5em;
+    cursor: pointer;
+    animation: apparition 1.4s cubic-bezier(0.48,-0.97, 0.01, 2.02) 5.3s backwards ;
+}
+
+#soundButton .mute i{
+    font-size: 2.5vw;
+    color: #ffffff;
+}
+
+#infoContainer{
+    perspective: 800px; 
+    position: absolute;
+    top: 15vh;
+    right: 2vw;
+}
+
+#infos{
+    transform: translateX(0);
+    animation: apparition 1.2s cubic-bezier(0.48,-0.97, 0.01, 2.02) 5.1s backwards;
+    transition: 0.6s;
+	transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+#infoContainer.flip #infos{
+    transform: rotateY(180deg);
+}
+
+#infos .front{
+    width: 2.5em;
+    height: 2.5em;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    background-color: #5bd0ff;
+    text-align: center;
+    padding: 0.5em;
+    backface-visibility: hidden;
+    z-index: 2;
+	transform: rotateY(0deg);
+}
+
+#infos .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #5bd0ff;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    font-weight: 600;
+    width: 14em;
+    padding: 3.5em 0;
+    text-align: center;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+#infos .back>span{
+    display: block;
+    font-size: 1.3vw;
+    text-shadow: 2px -1px 3px rgba(255, 255, 255, 1);
+}
+
+#infos .back>span:last-of-type{
+    margin: 2vh 1vw 0 1vw;
+    font-size: 0.9vw;
+    text-shadow: 4px -2px 8px rgba(255, 255, 255, 0);
+}
+
+#infos i{
+    font-size: 2.5vw;
+    color: #ffffff;
+}
+
+#button form{
+    transform: translateX(16vw);
+    animation: apparition 1.1s cubic-bezier(0.42, 0, 0.23, 2.23) 5s forwards;
+}
+
+#button .save{
+    transform: translateX(16vw);
+    animation: apparition 0.9s cubic-bezier(0.42, 0, 0.23, 2.23) 4.8s forwards;
+}
+
+#button .reset{
+    transform: translateX(16vw);
+    animation: apparition 1s cubic-bezier(0.42, 0, 0.23, 2.23) 5.1s forwards;
+}
+
+#button .clear{
+    transform: translateX(16vw);
+    animation: apparition 1.3s cubic-bezier(0.42, 0, 0.23, 2.23) 5.2s forwards;
+}
+
+#button .reset, #button .clear, #button form, #button form, #button .save{
+    position: absolute;
+    font-size: 2.5vw;
+    font-weight: 900;
+    color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    background-color: #5bd0ff;
+    padding: 0.5vh 2vw;
+    cursor: pointer;
+}
+
+#button form{
+    bottom: 35vh;
+    right : 2vw;
+}
+
+input[type="text"]{
+    height: 5vh;
+    width: 3vw;
+    font-size: 1.8vw;
+    border: none;
+    vertical-align: text-bottom;
+    margin-bottom: 0.4vh;
+    font-weight: 600;
+    text-align: center;
+}
+
+#button .save{
+    bottom: 25vh;
+    right : 2vw;
+}
+
+#button .reset{
+    bottom: 15vh;
+    right : 2vw;
+}
+
+#button .clear{
+    bottom: 5vh;
+    right : 2vw;
+}
+
+.instruction{
+    position: absolute;
+    font-size: 2vw;
+    font-weight: 700;
+    bottom: 2.5vh;
+    left : 2vw;
+    display: none;
+}
+
+/* KEYFRAMES */
+
+@keyframes countDown {
+    0%{font-size: 150vw; transform: translateY(-950px); opacity: 1;}
+    90%{opacity: 1;}
+    100{font-size: 30vw; opacity: 0;}
+}
+
+@keyframes apparition {
+    0%{transform: translateX(16vw)}
+    100%{transform: translateX(0)}
+}

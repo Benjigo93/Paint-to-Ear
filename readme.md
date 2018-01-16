@@ -17,10 +17,15 @@ You can mute the window tab by clicking the mute button.
 ## Resources
 
 HTML5
+
 CSS3
+
 JS
+
 FileSaver.js
+
 Visual Studio Code
+
 Google Chrome Dev Tools
 
 ## Thanks

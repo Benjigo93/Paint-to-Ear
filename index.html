@@ -13,57 +13,62 @@
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
-    <div id="countdown">
-        <div class="number">5</div>
-        <div class="number2">4</div>
-        <div class="number3">3</div>
-        <div class="number4">2</div>
-        <div class="number5">1</div>
+    <div class="warning">
+        <h2>This website is not available for you device. It will be soon...</h2>
     </div>
-    <div class="prevent">
-        <span>For an enhanced audio experience,</span>
-        <span>Plug in your headphones
-            <i class="fa fa-headphones" aria-hidden="true"></i>
-        </span>
-    </div>
-    <div id="soundButton">
-        <div class="mute">
-            <i id="idButton" class="fa fa-volume-up" aria-hidden="true"></i>
+    <div class="game">
+        <canvas id="canvas"></canvas>
+        <div id="countdown">
+            <div class="number">5</div>
+            <div class="number2">4</div>
+            <div class="number3">3</div>
+            <div class="number4">2</div>
+            <div class="number5">1</div>
         </div>
-    </div>
-    <div id="infoContainer">
-        <div id="infos">
-            <div class="front">
-                <i class="fa fa-info" aria-hidden="true"></i>
-            </div>
-            <div class="back">
-                <span>Created By Benjamin Kichenamourty</span>
-                <span>Draw and Enjoy by listening to various versions of "River flows in you" originally composed by Yiruma. </span>
+        <div class="prevent">
+            <span>For an enhanced audio experience,</span>
+            <span>Plug in your headphones
+                <i class="fa fa-headphones" aria-hidden="true"></i>
+            </span>
+        </div>
+        <div id="soundButton">
+            <div class="mute">
+                <i id="idButton" class="fa fa-volume-up" aria-hidden="true"></i>
             </div>
         </div>
-    </div>
-    <div id="button">
-        <form>
-            <input type="text" id="size" maxlength="2" autocomplete="on" value="30">
-            <span class="sizeIt" submit="">Size It</span>
-        </form>
-        <div class="save">SAVE IT</div>
-        <div class="reset">RESET</div>
-        <div class="clear">CLEAR</div>
-    </div>
-    <div class="instruction">
-        <span>Click to stop the spreading</span>
-    </div>
-    <audio id="music1" src="audio/first.mp3" loop></audio>
-    <audio id="music2" src="audio/second.mp3" loop></audio>
-    <audio id="music3" src="audio/third.mp3" loop></audio>
-    <audio id="music4" src="audio/fourth.mp3" loop></audio>
-    <audio id="music5" src="audio/fifth.mp3" loop></audio>
-    <audio id="music6" src="audio/sixth.mp3" loop></audio>
+        <div id="infoContainer">
+            <div id="infos">
+                <div class="front">
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                </div>
+                <div class="back">
+                    <span>Created By Benjamin Kichenamourty</span>
+                    <span>Draw and Enjoy by listening to various versions of "River flows in you" originally composed by Yiruma. </span>
+                </div>
+            </div>
+        </div>
+        <div id="button">
+            <form>
+                <input type="text" id="size" maxlength="2" autocomplete="on" value="30">
+                <span class="sizeIt" submit="">Size It</span>
+            </form>
+            <div class="save">SAVE IT</div>
+            <div class="reset">RESET</div>
+            <div class="clear">CLEAR</div>
+        </div>
+        <div class="instruction">
+            <span>Click to stop the spreading</span>
+        </div>
+        <audio id="music1" src="audio/first.mp3" loop></audio>
+        <audio id="music2" src="audio/second.mp3" loop></audio>
+        <audio id="music3" src="audio/third.mp3" loop></audio>
+        <audio id="music4" src="audio/fourth.mp3" loop></audio>
+        <audio id="music5" src="audio/fifth.mp3" loop></audio>
+        <audio id="music6" src="audio/sixth.mp3" loop></audio>
 
-    <script src="script/fileSaver.js"></script>
-    <script src="script/app.js"></script>
+        <script src="script/fileSaver.js"></script>
+        <script src="script/app.js"></script>
+    </div>
 </body>
 
 </html>

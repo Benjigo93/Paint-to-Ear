@@ -8,6 +8,35 @@ body{
     -webkit-user-select: none;
 }
 
+@media screen and (max-width: 1024px) {
+    .warning {
+        display: flex;
+    }
+    .game{
+        display: none;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .warning {
+        display: none;
+    }
+    .game{
+        display: block;
+    }
+}
+
+.warning{
+    align-items: center;
+    justify-content: center;
+    background-color: #FFA500;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    font-size: 1.1em;
+}
+
 canvas{
     pointer-events: none;
 }

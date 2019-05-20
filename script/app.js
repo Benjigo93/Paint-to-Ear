@@ -1,12 +1,7 @@
+/* Declarations of all variables */
+
 const canvas = document.querySelector('canvas')
 const context = canvas.getContext('2d')
-
-/* Canvas takes full screen size, respective to the device */
-
-context.canvas.width = window.innerWidth;
-context.canvas.height = window.innerHeight;
-
-/* Declarations of all variables */
 
 const mousePos = { x: 0, y: 0 }
 const circlePos = { x: 0, y: 0 }
@@ -16,12 +11,12 @@ const mouseCircle3 = { x: 0, y: 0 }
 const mouseCircle4 = { x: 0, y: 0 }
 const mouseCircle5 = { x: 0, y: 0 }
 const mouseCircle6 = { x: 0, y: 0 }
-var pause = true
-var start = 0
-var stop = true
-var size = 30
-var newSize = 0
-var delSize = 30 * 1.45
+let pause = true
+let start = 0
+let stop = true
+let size = 30
+let newSize = 0
+let delSize = 30 * 1.45
 const allMusic = document.querySelectorAll('audio')
 const music1 = document.querySelector('#music1')
 const music2 = document.querySelector('#music2')
@@ -29,8 +24,13 @@ const music3 = document.querySelector('#music3')
 const music4 = document.querySelector('#music4')
 const music5 = document.querySelector('#music5')
 const music6 = document.querySelector('#music6')
-var changeI = true
-var changeT = true
+let changeI = true
+let changeT = true
+
+/* Canvas takes full screen size, respective to the device */
+
+context.canvas.width = window.innerWidth
+context.canvas.height = window.innerHeight
 
 /* Tracking the position of the mouse */
 
@@ -57,7 +57,7 @@ const loop = () => {
     context.fill()
 }
 
-/* Loading the circles/brushes with diffeent colors */
+/* Loading the circles/brushes with differents colors */
 
 const showMouseCircle = () => {
 
@@ -86,140 +86,140 @@ const showMouseCircle = () => {
     context.arc(mouseCircle.x, mouseCircle.y, size, 0, Math.PI * 2, false)
     context.fillStyle = 'red'
     context.fill()
-    context.lineWidth = size / 3;
+    context.lineWidth = size / 3
     context.stroke()
 
     context.beginPath()
     context.arc(mouseCircle2.x, mouseCircle2.y, size, 0, Math.PI * 2, false)
     context.fillStyle = 'blue'
     context.fill()
-    context.lineWidth = size / 3;
+    context.lineWidth = size / 3
     context.stroke()
 
     context.beginPath()
     context.arc(mouseCircle3.x, mouseCircle3.y, size, 0, Math.PI * 2, false)
     context.fillStyle = 'green'
     context.fill()
-    context.lineWidth = size / 3;
+    context.lineWidth = size / 3
     context.stroke()
 
     context.beginPath()
     context.arc(mouseCircle4.x, mouseCircle4.y, size, 0, Math.PI * 2, false)
     context.fillStyle = 'yellow'
     context.fill()
-    context.lineWidth = size / 3;
+    context.lineWidth = size / 3
     context.stroke()
 
     context.beginPath()
     context.arc(mouseCircle5.x, mouseCircle5.y, size, 0, Math.PI * 2, false)
     context.fillStyle = 'black'
     context.fill()
-    context.lineWidth = size / 3;
+    context.lineWidth = size / 3
     context.stroke()
 
     context.beginPath()
     context.arc(mouseCircle6.x, mouseCircle6.y, size, 0, Math.PI * 2, false)
     context.fillStyle = 'white'
     context.fill()
-    context.lineWidth = size / 3;
+    context.lineWidth = size / 3
     context.stroke()
 
-    document.querySelector('.prevent').style.display ="none"
-    document.querySelector('#countdown').style.display = "none"
-    canvas.style.pointerEvents = "auto"
+    document.querySelector('.prevent').style.display = 'none'
+    document.querySelector('#countdown').style.display = 'none'
+    canvas.style.pointerEvents = 'auto'
 }
 
 /* Detect the mouse position and comparing it with the position of each circle/brush */
 
 canvas.onmousemove = (e) => {
 
-    var canvas = e.target
-    var context = canvas.getContext('2d')
+    let canvas = e.target
+    let context = canvas.getContext('2d')
 
 
-    context.beginPath();
+    context.beginPath()
     context.arc(mouseCircle.x, mouseCircle.y, size, 0, Math.PI * 2, false)
 
     if (context.isPointInPath(mousePos.x, mousePos.y)) {
         start = 1
         stop = false
         for (let i = 0; i < allMusic.length; i++) {
-            (allMusic[i]).play();
+            (allMusic[i]).play()
         }
-        return;
+        return
     }
 
-    context.beginPath();
+    context.beginPath()
     context.arc(mouseCircle2.x, mouseCircle2.y, size, 0, Math.PI * 2, false)
 
     if (context.isPointInPath(mousePos.x, mousePos.y)) {
         start = 2
         stop = false
         for (let i = 0; i < allMusic.length; i++) {
-            (allMusic[i]).play();
+            (allMusic[i]).play()
         }
-        return;
+        return
     }
 
-    context.beginPath();
+    context.beginPath()
     context.arc(mouseCircle3.x, mouseCircle3.y, size, 0, Math.PI * 2, false)
 
     if (context.isPointInPath(mousePos.x, mousePos.y)) {
         start = 3
         stop = false
         for (let i = 0; i < allMusic.length; i++) {
-            (allMusic[i]).play();
+            (allMusic[i]).play()
         }
-        return;
+        return
     }
 
-    context.beginPath();
+    context.beginPath()
     context.arc(mouseCircle4.x, mouseCircle4.y, size, 0, Math.PI * 2, false)
 
     if (context.isPointInPath(mousePos.x, mousePos.y)) {
         start = 4
         stop = false
         for (let i = 0; i < allMusic.length; i++) {
-            (allMusic[i]).play();
+            (allMusic[i]).play()
         }
-        return;
+        return
     }
 
-    context.beginPath();
+    context.beginPath()
     context.arc(mouseCircle5.x, mouseCircle5.y, size, 0, Math.PI * 2, false)
 
     if (context.isPointInPath(mousePos.x, mousePos.y)) {
         start = 5
         stop = false
         for (let i = 0; i < allMusic.length; i++) {
-            (allMusic[i]).play();
+            (allMusic[i]).play()
         }
-        return;
+        return
     }
 
-    context.beginPath();
+    context.beginPath()
     context.arc(mouseCircle6.x, mouseCircle6.y, size, 0, Math.PI * 2, false)
 
     if (context.isPointInPath(mousePos.x, mousePos.y)) {
         start = 6
         stop = false
         for (let i = 0; i < allMusic.length; i++) {
-            (allMusic[i]).play();
+            (allMusic[i]).play()
         }
-        return;
+        return
     }
 }
 
-/* Drawing function, by moving the mouse and stop it by a click */
+/* Drawing function, by moving the mouse and stop it with a click */
 
 document.addEventListener('mousemove', function draw() {
 
-    document.querySelector('.instruction').style.display = "block"
+    document.querySelector('.instruction').style.display = 'block'
     if (stop == false) {
         for (let i = 0; i < allMusic.length; i++) {
-            (allMusic[i]).muted = true;
+            (allMusic[i]).muted = true
         }
-        canvas.style.cursor = "crosshair"
+        canvas.style.cursor = 'crosshair'
         if (start == 1) {
             context.beginPath()
             context.arc(mousePos.x, mousePos.y, size, 0, Math.PI * 2, false)
@@ -228,9 +228,9 @@ document.addEventListener('mousemove', function draw() {
             music1.muted = false
             canvas.addEventListener('click', function () {
                 for (let i = 0; i < allMusic.length; i++) {
-                    (allMusic[i]).pause();
+                    (allMusic[i]).pause()
                 }
-                canvas.style.cursor = "auto"
+                canvas.style.cursor = 'auto'
                 stop = true
             })
         } else if (start == 2) {
@@ -241,9 +241,9 @@ document.addEventListener('mousemove', function draw() {
             music2.muted = false
             canvas.addEventListener('click', function () {
                 for (let i = 0; i < allMusic.length; i++) {
-                    (allMusic[i]).pause();
+                    (allMusic[i]).pause()
                 }
-                canvas.style.cursor = "auto"
+                canvas.style.cursor = 'auto'
                 stop = true
             })
         } else if (start == 3) {
@@ -254,9 +254,9 @@ document.addEventListener('mousemove', function draw() {
             music3.muted = false
             canvas.addEventListener('click', function () {
                 for (let i = 0; i < allMusic.length; i++) {
-                    (allMusic[i]).pause();
+                    (allMusic[i]).pause()
                 }
-                canvas.style.cursor = "auto"
+                canvas.style.cursor = 'auto'
                 stop = true
             })
         } else if (start == 4) {
@@ -267,9 +267,9 @@ document.addEventListener('mousemove', function draw() {
             music4.muted = false
             canvas.addEventListener('click', function () {
                 for (let i = 0; i < allMusic.length; i++) {
-                    (allMusic[i]).pause();
+                    (allMusic[i]).pause()
                 }
-                canvas.style.cursor = "auto"
+                canvas.style.cursor = 'auto'
                 stop = true
             })
         } else if (start == 5) {
@@ -280,9 +280,9 @@ document.addEventListener('mousemove', function draw() {
             music5.muted = false
             canvas.addEventListener('click', function () {
                 for (let i = 0; i < allMusic.length; i++) {
-                    (allMusic[i]).pause();
+                    (allMusic[i]).pause()
                 }
-                canvas.style.cursor = "auto"
+                canvas.style.cursor = 'auto'
                 stop = true
             })
         } else if (start == 6) {
@@ -293,15 +293,15 @@ document.addEventListener('mousemove', function draw() {
             music6.muted = false
             canvas.addEventListener('click', function () {
                 for (let i = 0; i < allMusic.length; i++) {
-                    (allMusic[i]).pause();
+                    (allMusic[i]).pause()
                 }
-                canvas.style.cursor = "auto"
+                canvas.style.cursor = 'auto'
                 stop = true
             })
         }
     } else {
-        document.querySelector('.instruction').style.display = "none"
-        return;
+        document.querySelector('.instruction').style.display = 'none'
+        return
     }
 })
 
@@ -356,7 +356,7 @@ document.querySelector('.reset').addEventListener('click', reset)
 /* Calling the Clear function by clicking the clear button */
 
 document.querySelector('.clear').addEventListener('click', function clear() {
-    canvas.style.pointerEvents = "none"
+    canvas.style.pointerEvents = 'none'
     context.clearRect(0, 0, canvas.width, canvas.height)
     pause = true
     stop = true
@@ -369,7 +369,7 @@ document.querySelector('.clear').addEventListener('click', function clear() {
 /* Size it function, which will resize the circles/brushes */
 
 function sizeIt() {
-    newSize = document.getElementById("size").value
+    newSize = document.getElementById('size').value
     if (newSize < size) {
         delSize = size * (size / newSize + 15)
         size = newSize
@@ -381,15 +381,15 @@ function sizeIt() {
     }
 }
 
-/* Calling the Size It function by clicking the size It button and also by pressing the Enter button */
+/* Calling the Size It function by clicking the size It button and also by pressing the Enter button in the keyboard */
 
 document.querySelector('.sizeIt').addEventListener('click', sizeIt)
 document.getElementById('size').onkeypress = function (e) {
-    if (!e) e = window.event;
-    var keyCode = e.keyCode || e.which;
+    if (!e) e = window.event
+    let keyCode = e.keyCode || e.which
     if (keyCode == '13') {
         sizeIt()
-        return false;
+        return false
     }
 }
 
@@ -397,42 +397,42 @@ document.getElementById('size').onkeypress = function (e) {
 
 const download = () => {
     canvas.toBlob(function (blob) {
-        saveAs(blob, "My painting.png");
-    });
+        saveAs(blob, 'My painting.png')
+    })
 }
 
 /* Calling the download function by clicking the save It button */
 
-document.querySelector('.save').addEventListener('click', download);
+document.querySelector('.save').addEventListener('click', download)
 
 
-/* Attributing the flip class by toggle for the flip animation */
+/* Attributing the flip class by a toggle for the flip animation */
 
 document.querySelector('#infos').addEventListener('click', function () {
-    document.querySelector('#infoContainer').classList.toggle("flip")
-    if (changeT){
+    document.querySelector('#infoContainer').classList.toggle('flip')
+    if (changeT) {
         setTimeout(function () {
-            document.querySelector('.prevent').style.display ="block"
+            document.querySelector('.prevent').style.display = 'block'
             changeT = false
-        },200)
-    }else{
-        document.querySelector('.prevent').style.display ="none"
+        }, 200)
+    } else {
+        document.querySelector('.prevent').style.display = 'none'
         changeT = true
     }
 })
 
-/* Change the volume logo and Mute function */
+/* Change the volume logo and define the Mute function */
 
-document.querySelector('.mute').addEventListener('click',function(){
+document.querySelector('.mute').addEventListener('click', function () {
     const button = document.querySelector('#idButton')
-    if (changeI){
-        button.classList= "fa fa-volume-off"
+    if (changeI) {
+        button.classList = 'fa fa-volume-off'
         for (let i = 0; i < allMusic.length; i++) {
             (allMusic[i]).volume = 0
         }
         changeI = false
-    } else{
-        button.classList= "fa fa-volume-up"
+    } else {
+        button.classList = 'fa fa-volume-up'
         for (let i = 0; i < allMusic.length; i++) {
             (allMusic[i]).volume = 1
         }
